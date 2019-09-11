@@ -1,0 +1,103 @@
+1.通信
+
+    服务于浏览器之间的通信 协议 http
+    浏览器    --->发送请求     服务器
+              <-----响应
+              
+2.软件结构
+  c/s  client server  客户端与服务器端
+          cs go
+  B/C  browser server   浏览器和服务器
+  
+  
+  3.静态资源 和 动态资源
+  静态资源： 用户与服务器没有交互，成为静态资源
+        html+css+js
+        
+  动态资源：用户与服务器存在交互
+    jsp、php、 servlet、python、.net
+    
+  4.服务器
+    1.是配置特别高的pc机
+       阿里云
+     2.web项目需要放在容器中运行
+     
+     Tomcat         中小型的免费的服务器容器
+     Weblogic       大型项目的部署容器、Oracle公司提供免费
+     Webshare       收费的大型的项目部署容器
+     Jboss          收费的超大型项目部署容器
+     
+     
+     
+     
+在bin文件中双击startup.bat 让容器开启
+
+访问容器：  http://IP:8080/
+
+若打开tomcat时一闪而过，或者无法正常运行
+1、检查环境变量的配置
+
+我的电脑--》属性---》高级系统设置--》环境变量
+
+System
+JAVA_HOME          JDK安装路径
+Path                ;%JAVA_HOME%\bin 
+CLASSPATH           .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar
+
+
+
+
+2、检查端口号是否被占用
+        
+停掉占用该端口的其他程序
+1、在dos窗口中，输入命令：   netstat -ano
+2、打开任务管理器--》查看--》选择列--》勾选PID
+进程中找到对应PID的程序--》结束进程
+
+修改Tomcat的端口
+停止服务
+在conf文件夹--》server.xml  修改8080端口为8081
+开启服务  访问http://IP:8081
+
+停止服务：直接挂掉服务器窗口    ctrl+c     运行shutdown.bat
+
+将项目放入到tomcat中的webapps文件夹中运行
+
+项目名称
+        静态资源
+        WEB-INF
+         Classes文件夹-------------java文件编译后的class文件
+         Lib文件夹-------------------引入的外部的jar文件
+         Web.xml----------------------配置文件
+
+
+
+
+
+手动创建一个项目：
+Hello
+       Word.html
+
+将该项目放入到tomcat的webapps文件夹中，启动tomcat
+访问地址为：  http://IP：端口/项目名/项目内部资源路径
+http://10.10.108.207:8081/hello/word.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
